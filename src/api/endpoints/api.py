@@ -24,4 +24,4 @@ async def get_base() -> JSONResponse:
 
 @api_router.get("/pd")
 async def get_pd() -> JSONResponse:
-    return JSONResponse(status_code=status.HTTP_200_OK, content={"message": "Hello  FUCK World !!!!"})
+    return JSONResponse(status_code=status.HTTP_200_OK, content={"message": "Hello  FUCK World !!!!!"})
