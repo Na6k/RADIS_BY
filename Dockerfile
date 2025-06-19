@@ -13,6 +13,7 @@ RUN .venv/bin/python3 -m pip install poetry
 RUN .venv/bin/poetry install --only main
 RUN apt-get update && apt-get install -y \
     wget \
+    curl \
     # other dependencies...
     && rm -rf /var/lib/apt/lists/*
 
