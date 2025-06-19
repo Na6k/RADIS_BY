@@ -11,6 +11,10 @@ RUN python3 -m venv .venv
 RUN .venv/bin/python3 -m pip install --upgrade pip
 RUN .venv/bin/python3 -m pip install poetry
 RUN .venv/bin/poetry install --only main
+RUN apt-get update && apt-get install -y \
+    wget \
+    # other dependencies...
+    && rm -rf /var/lib/apt/lists/*
 
 ENV PORT 80
 EXPOSE $PORT

@@ -11,13 +11,7 @@ services:
 #    ports:
 #      - "8081:80"
     healthcheck:
-      test: [ "CMD", "curl", "-f", "http://localhost:80/docs" ]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-      start_period: 10s
-    networks:
-      - coolify
-networks:
-  coolify:
-    external: true
+      test: [ "CMD-SHELL", "wget -qO- http://localhost/docs" ]
+      interval: 5s
+      timeout: 20s
+      retries: 10
